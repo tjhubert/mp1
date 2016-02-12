@@ -1,0 +1,124 @@
+#intro {
+    height: 800px;
+    padding-top: 200px;
+    width: 90%;
+    margin: 0 auto;
+    position: relative;
+    .initial-hidden {
+        opacity: 0;
+        @include transition(opacity 1.5s)
+      }
+    #intro-square {
+        height: 500px;
+        width: 500px;
+        background-color: transparent;
+        border: 1px solid black;
+        position: absolute;
+        box-shadow: 0px 0px 0px 300px rgba(255,255,255,1);
+        top: 50%; left: 50%;
+        z-index: -1;
+        transform: translate(-50%,-55%) rotate(45deg);
+    }
+    #intro-text {
+      float: right;
+      position: absolute;
+      bottom: 180px;
+      right: 0;
+      font-family: $font-primary;
+      font-size: 40px;
+      font-style: italic;
+      font-weight: 100;
+    }
+    #intro-grid-wrapper {
+      height: 750px;
+      width: 750px;
+      border: 2px solid black;
+      top: 50%; left: 50%;
+      z-index: -2;
+      transform: translate(-50%,-55%);
+      position: absolute;
+      
+      #intro-grid-1 {
+        width: 100%;
+        height: 80px;
+        border-bottom: 7px solid black;
+      }
+      #intro-grid-2 {
+        width: 100%;
+        height: 280px;
+        border-bottom: 7px solid black;
+        #grid-2-1 {
+          display: block;
+          float: left;
+          overflow: hidden;
+          border-right: 4px solid black;
+          background-color: yellow;
+          height: 280px;
+          width: 38%;
+        }
+        #grid-2-2 {
+          display: inline-block;
+          border-right: 7px solid black;
+          background-color: $off-white;
+          height: 280px;
+          width: 35%;
+        }
+      }
+      #intro-grid-3 {
+        width: 100%;
+        height: 230px;
+        border-bottom: 7px solid black;
+        #grid-3-1 {
+          display: block;
+          float: left;
+          overflow: hidden;
+          height: 230px;
+          width: 22%;
+        }
+        #grid-3-2 {
+          display: block;
+          float: left;
+          overflow: hidden;
+          border-right: 5px solid black;
+          box-shadow: -5px 0px 0px 0px rgba(0,0,0,1);
+          height: 230px;
+          width: 16%;
+          #grid-3-2-1 {
+            width: 100%;
+            height: 120px;
+            background-color: black;
+          }
+          #grid-3-2-2 {
+            width: 100%;
+            height: 110px;
+            background-color: $off-white;
+          }
+        }
+        #grid-3-3 {
+          display: block;
+          float: left;
+          overflow: hidden;
+          height: 230px;
+          width: 35%;
+          border-right: 7px solid black;
+        }
+        #grid-3-4 {
+          display: inline-block;
+          width: 25%;
+          height: 230px;
+          background-color: blue;
+        }
+      }
+      #intro-grid-4 {
+        width: 100%;
+        height: 160px;
+        #grid-4-1 {
+          width: 38%;
+          height: 150px;
+          background-color: red;
+          border-right: 5px solid black;
+
+        }
+      }
+    }
+}

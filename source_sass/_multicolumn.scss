@@ -1,0 +1,68 @@
+#multi-column{
+    height: 300px;
+    /*background-color: yellow;*/
+    width: 100%;
+    border-top: 2px solid black;
+    border-bottom: 5px solid black;
+    #columns-wrapper{
+      width:95%;
+      height: 300px;
+      /*margin: 0 auto;*/
+    }
+    #column-margin {
+      display: block;
+      overflow: hidden;
+      float: left;
+      width: 7%;
+      background-color: black;
+      height: 300px;
+    }
+    .columns{
+      width: 30%;
+      height: 300px;
+      display: block;
+      overflow: hidden;
+      float: left;
+      color: black;
+      /*@include transition(background-color 0.5s, color 0.5s);*/
+      & {
+        border-left: 5px solid black;
+      }
+      &:last-child {
+        border-right: 2px solid black;
+      }
+      /*&:hover {
+        background-color: black;
+        color: white;
+      }*/
+      .columns-title{
+        margin-left: 40px;
+        margin-right: 40px;
+        margin-top: 40px;
+        font-family: $font-primary;
+        font-weight: 900;
+        font-size: 40px;
+        text-align: center;
+      }
+      .columns-description{
+        margin-right: 40px;
+        margin-left: 40px;
+        margin-top: 30px;
+        font-family: $font-secondary;
+        font-weight: 100;
+        font-size: 20px;
+        line-height: 25px;
+      }
+    }
+    #column-left {
+        background-color: yellow;
+      }
+      #column-middle {
+        background-color: $off-white;
+      }
+      #column-right {
+        background-color: blue;
+        color: $off-white;
+      }
+    
+}

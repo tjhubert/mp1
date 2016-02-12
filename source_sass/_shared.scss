@@ -1,0 +1,47 @@
+.arrow{
+    .arrow-strip{
+        width: 15px;
+        height: 5px;
+        background-color:black;
+        display: inline-block;
+        position: relative;
+        bottom: 5px;
+        @include transition(background-color 0.1s);
+    }
+    .arrow-head{
+      display: inline-block;
+      position: relative;
+      width: 10px;
+      height: 10px;
+      border-right: 5px solid black;
+      border-top: 5px solid black;
+      @include transition(border-right-color 0.1s, border-top-color 0.1s);
+    }
+    &:hover {
+      cursor: pointer;
+      .arrow-strip {
+        background-color: $gray;
+      }
+      .arrow-head {
+        border-right-color: $gray;
+        border-top-color: $gray;
+      }
+    }
+}
+
+.arrow-right{
+  .arrow-head{
+      right: 15px;
+      transform: rotate(45deg);
+  }
+}
+
+.arrow-left{
+  .arrow-strip {
+    left: 5px;
+  }
+  .arrow-head{
+      right: 18px;
+      transform: rotate(225deg);
+  }
+}
