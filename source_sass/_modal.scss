@@ -1,0 +1,39 @@
+#modal{
+    width:100%;
+    #modal-wrapper{
+      width: 86%;
+      margin: 0 auto;
+      height: 770px;
+      background: white;
+      #modal-title {
+        width: 100%;
+        font-family: $font-primary;
+        font-weight: 900;
+        font-size: 40px;
+        padding-top: 50px;
+        text-align: right;
+      }
+      #modal-works-container {
+        margin-top: 40px;
+        width: 100%;
+        .modal-works {
+          display: block;
+          float: left;
+          overflow: hidden;
+          width: 18%;
+          padding-bottom: 18%;
+          margin-bottom: 50px;
+          background: black;
+          background-size: cover;
+          @include transition(opacity, 0.3s ease);
+          &:not(:nth-child(5n)) {
+            margin-right: 2.5%;
+          }
+          &:hover {
+            cursor: pointer;
+            opacity: 0.5;
+          }
+        }
+      }
+    }
+}

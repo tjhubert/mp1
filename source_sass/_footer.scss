@@ -1,11 +1,11 @@
 #footer {
-    height: 50px;
-    width: 95%;
+    height: 75px;
+    width: 100%;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 50px;
-    padding-top: 20px;
+    padding-top: 15px;
     border-top: 3px solid black;
+    background-color: white;
     #footer-icons {
       text-align: center;
       a {
@@ -19,6 +19,15 @@
         &:hover {
           color: $gray;
         }
+      }
+    }
+    #footer-name{
+      text-align: center;
+      margin-top: 7px;
+      font-family: $font-secondary;
+      a {
+        color: black;
+        text-decoration: underline;
       }
     }
 }

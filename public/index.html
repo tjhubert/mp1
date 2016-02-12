@@ -14,16 +14,13 @@
   <nav id="navbar">
     <div id="navbar-wrapper">
       <div class="navbar-links">
-        <a href="/#">intro</a>
-      </div>
-      <div class="navbar-links">
-        <a href="/#">summary</a>
-      </div>
-      <div class="navbar-links">
-        <a href="/#">works</a>
+        <a href="/#">who</a>
       </div>
       <div class="navbar-links">
         <a href="/#">timeline</a>
+      </div>
+      <div class="navbar-links">
+        <a href="/#">works</a>
       </div>
     </div>
   </nav>
@@ -89,16 +86,21 @@
           Neo-Plasticism
         </div>
         <div class="columns-description">
-          In Mondrian's book on Neo-Plasticism, he detailed his vision of artistic expression in which "plastic" simply referred to the action of forms and colors on the surface of the canvas as a new method for representing modern reality.
+          Mondrian detailed his vision of artistic expression in which "plastic" simply referred to the action of forms and colors on the surface of the canvas as a new method for representing modern reality.
         </div>
       </div>
     </div>
   </div>
   
   <div id="video">
-    <video id="video-player" controls>
-        <source src="source_media/piet_mondrian_movie.mp4" type="video/mp4">
-    </video>
+    <div id="video-wrapper">
+      <div id="video-description">
+        "All painting – the painting of the past as well as of the present – shows us that its essential plastic means we are only line and color."
+      </div>
+      <video id="video-player" muted loop autoplay>
+          <source src="media/piet_mondrian_movie.mp4" type="video/mp4">
+      </video>
+    </div>
   </div>
 
   <div id="carousel">
@@ -169,7 +171,7 @@
         1914 to 1919
       </h4>
       <h3 class="carousel-title">
-        Mondrian Visits Netherlands; World War I Begins
+        Mondrian Visits Netherlands
       </h3>
       <div class="carousel-content">
         We cannot know what immediate course Mondrian’s painting—as distinct from his ideas about painting—would have followed if the war had not disrupted his artistic pursuits in the summer of 1914.
@@ -184,7 +186,7 @@
         Theo van Doesburg Promotes De Stijl Movement
       </h3>
       <div class="carousel-content">
-        It was while reviewing an exposition for one of these magazines he wrote for, in 1915 (halfway through his two-year service in the army), that he came in contact with the works of Piet Mondrian, who was eight years older than him, and had by then already gained some attention with his paintings.
+        It was while reviewing an exposition for one of these magazines he wrote for, in 1915 (halfway through his two-year service in the army), that he came in contact with the works of Piet Mondrian.
       </div>
     </div>
 
@@ -260,8 +262,57 @@
       </div>
     </div>
     
-
   </div>
+
+  <div id="background">
+    <div id="background-title">
+      Broadway Boogie-Woogie
+      <div id="background-description">
+        one of Mondrian's masterpieces
+      </div>
+    </div>
+    <img src="media/broadway-boogie-woogie.jpg"/>
+  </div>
+
+  <div id="modal">
+    <div id="modal-wrapper">
+      <div id="modal-title">
+        Other works
+      </div>
+      <div id="modal-works-container">
+        <div class="modal-works">
+        </div>
+        <div class="modal-works">
+        </div>
+        <div class="modal-works">
+        </div>
+        <div class="modal-works">
+        </div>
+        <div class="modal-works">
+        </div>
+        <div class="modal-works">
+        </div>
+        <div class="modal-works">
+        </div>
+        <div class="modal-works">
+        </div>
+        <div class="modal-works">
+        </div>
+        <div class="modal-works">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="lightbox">
+  <div id="lightbox-transparent"></div>
+  <div id="lightbox-hide"></div>
+  <div id="lightbox-content"></div>
+  <div id="lightbox-description">
+    <span>
+    </span>
+  </div>
+</div>
 
   <div id="footer">
     <div id="footer-icons">
@@ -274,6 +325,9 @@
       <a href="//instagram.com/tjhubert" target="_blank">
         <i class="fa fa-instagram"></i>
       </a>
+    </div>
+    <div id="footer-name">
+      designed and developed by <a href="//tjhubert.com" target="_black">tjhubert</a>
     </div>
   </div>
 

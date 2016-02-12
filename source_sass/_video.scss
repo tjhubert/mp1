@@ -1,0 +1,28 @@
+#video{
+    #video-wrapper {
+      width: 100%;
+      background-color: $off-white;
+      border-bottom: 5px solid black;
+      position: relative;
+      #video-description {
+        width: 30%;
+        position: absolute;
+        margin-left: 10%;
+        /*top: 30%;*/
+        font-family: $font-primary;
+        font-size: 40px;
+        font-style: italic;
+        font-weight: 100;
+        text-align: right;
+        @include vertical-center(0%);
+      }
+      video {
+        border-right: 7px solid black;
+        border-left: 3px solid black;
+        display: inline-block;
+        width: 50%;
+        margin-left: 42.5%;
+        margin-bottom: -3px;
+      }
+    }
+}
