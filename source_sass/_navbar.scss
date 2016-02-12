@@ -19,22 +19,30 @@ nav {
         float: left;
         width: 200px;
         text-align: center;
-        @include transition(width 0.3s, border-right 0.3s);
-        a {
-          color: black;
-        }
+        @include transition(width 0.3s, border-right 0.3s, background-color 0.1s, color 0.1s);
+        color: black;
         &:not(:last-child) {
             border-right: 3px solid black;
         }
+        &:hover{
+          cursor: pointer;
+        }
+      }
+      .navbar-active {
+        background-color: black;
+        color: $off-white;
       }
       .hover-blue {
         background-color: blue;
+        color: $off-white;
       }
       .hover-yellow {
         background-color: yellow;
+        color: black;
       }
       .hover-red {
         background-color: red;
+        color: $off-white;
       }
     }
 }

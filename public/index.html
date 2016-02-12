@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>MP1 Starter</title>
+  <title>Piet Mondrian, a tribute</title>
+  <link rel="shortcut icon" type="image/png" href="/favicon.png"/>
   <link href='https://fonts.googleapis.com/css?family=Josefin+Slab:400,100,100italic,300,300italic,400italic,600,600italic,700,700italic' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Maven+Pro:400,500,700,900' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
@@ -14,13 +15,13 @@
   <nav id="navbar">
     <div id="navbar-wrapper">
       <div class="navbar-links">
-        <a href="/#">who</a>
+        <span>who</span>
       </div>
       <div class="navbar-links">
-        <a href="/#">timeline</a>
+        <span>timeline</span>
       </div>
       <div class="navbar-links">
-        <a href="/#">works</a>
+        <span>works</span>
       </div>
     </div>
   </nav>
@@ -62,44 +63,66 @@
   </div>
 
   <div id="multi-column">
-    <div id="columns-wrapper">
-      <div id="column-margin">
-      </div>
-      <div class="columns" id="column-left">
-        <div class="columns-title">
-          a Dutch painter
-        </div>
-        <div class="columns-description">
-          He radically simplified the elements of his paintings to reflect what he saw as the spiritual order underlying the visible world, creating a clear, universal aesthetic language within his canvases.  
+
+      <div class="column-margins" id="column-margin-left">
+        <div id="column-margin-black">
         </div>
       </div>
-      <div class="columns" id="column-middle">
-        <div class="columns-title">
-          De Stijl movement
+
+      <div id="columns-wrapper">
+
+        <div class="columns" id="column-left">
+          <div class="columns-title">
+            a Dutch painter
+          </div>
+          <div class="columns-description">
+            He radically simplified the elements of his paintings to reflect what he saw as the spiritual order underlying the visible world, creating a clear, universal aesthetic language within his canvases.  
+          </div>
         </div>
-        <div class="columns-description">
-          Mondrian, and the artists of De Stijl, advocated pure abstraction and a pared down palette in order to express a utopian ideal of universal harmony in all of the arts.
+
+        <div class="columns" id="column-middle">
+          <div class="columns-title">
+            De Stijl movement
+          </div>
+          <div class="columns-description">
+            Mondrian, and the artists of De Stijl, advocated pure abstraction and a pared down palette in order to express a utopian ideal of universal harmony in all of the arts.
+          </div>
+        </div>
+
+        <div class="columns" id="column-right">
+          <div class="columns-title">
+            Neo-Plasticism
+          </div>
+          <div class="columns-description">
+            Mondrian detailed his vision of artistic expression in which "plastic" simply referred to the action of forms and colors on the surface of the canvas as a new method for representing modern reality.
+          </div>
+        </div>
+
+      </div>
+
+      <div class="column-margins" id="column-margin-right">
+        <div id="column-margin-white">
+        </div>
+        <div id="column-margin-red">
         </div>
       </div>
-      <div class="columns" id="column-right">
-        <div class="columns-title">
-          Neo-Plasticism
-        </div>
-        <div class="columns-description">
-          Mondrian detailed his vision of artistic expression in which "plastic" simply referred to the action of forms and colors on the surface of the canvas as a new method for representing modern reality.
-        </div>
-      </div>
-    </div>
+
+
   </div>
   
   <div id="video">
     <div id="video-wrapper">
+
       <div id="video-description">
-        "All painting – the painting of the past as well as of the present – shows us that its essential plastic means we are only line and color."
+        <span>
+          "All painting – the painting of the past as well as of the present – shows us that its essential plastic means we are only line and color."
+        </span>
       </div>
+
       <video id="video-player" muted loop autoplay>
           <source src="media/piet_mondrian_movie.mp4" type="video/mp4">
       </video>
+
     </div>
   </div>
 
@@ -327,7 +350,7 @@
       </a>
     </div>
     <div id="footer-name">
-      designed and developed by <a href="//tjhubert.com" target="_black">tjhubert</a>
+      designed and developed by <a href="//tjhubert.com" target="_black">tjhubert</a> with <i class="fa fa-heart-o"></i>
     </div>
   </div>
 

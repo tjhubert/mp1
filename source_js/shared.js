@@ -10,3 +10,16 @@ function randomColorGenerator() {
         return "yellow";
     }
 }
+
+function inView(element, buffer) {
+    var elementTop = element.offset().top;
+    var elementBottom = element.offset().top + element.height();
+    var screenBottom = $(window).scrollTop() + $(window).height();
+    var screenTop = $(window).scrollTop();
+
+    if (typeof buffer === 'undefined') {
+        buffer = 0;
+    }
+
+    return elementTop > screenTop - buffer && screenBottom > elementBottom - buffer;
+}

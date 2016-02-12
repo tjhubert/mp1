@@ -3,13 +3,13 @@
     width: 100%;
     margin-left: auto;
     margin-right: auto;
-    padding-top: 15px;
+    padding-top: 20px;
     border-top: 3px solid black;
     background-color: white;
     #footer-icons {
       text-align: center;
       a {
-        font-size: 40px;
+        font-size: 35px;
         color: black;
         @include transition(color 0.1s);
         &:not(:last-child) {
@@ -25,6 +25,7 @@
       text-align: center;
       margin-top: 7px;
       font-family: $font-secondary;
+      font-size: 13px;
       a {
         color: black;
         text-decoration: underline;
