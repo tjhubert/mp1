@@ -1,0 +1,17 @@
+@mixin transition($args...) {
+  -webkit-transition: $args;
+  -moz-transition: $args;
+  -ms-transition: $args;
+  -o-transition: $args;
+  transition: $args;
+}
+
+@mixin vertical-horizontal-center($offsetX, $offsetY) {
+  top: 50%; left: 50%;
+  transform: translate(-50% - $offsetX,-50% - $offsetY);
+}
+
+@mixin vertical-center($offsetY) {
+  top: 50%;
+  transform: translate(0%,-50% - $offsetY);
+}
