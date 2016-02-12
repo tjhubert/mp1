@@ -15,7 +15,7 @@
       float: left;
       position: relative;
       left: 3%;
-      @include vertical-center(0%);
+      @include vertical-center(50%);
     }
     .carousel-slides {
       display: none;
@@ -30,7 +30,7 @@
         padding-left: 50px;
         padding-right: 50px;
         font-family: $font-secondary;
-        font-size: 25px;
+        font-size: 20px;
         font-style: italic;
         font-weight: 100;
       }
@@ -39,13 +39,13 @@
         padding-right: 50px;
         padding-bottom: 50px;
         font-family: $font-primary;
-        font-size: 55px;
+        font-size: 45px;
         font-weight: 700;
       }
       .carousel-content {
         padding-right: 50px;
         padding-left: 50px;
-        font-size: 38px;
+        font-size: 27px;
         line-height: 40px;
         font-family: $font-secondary;
       }

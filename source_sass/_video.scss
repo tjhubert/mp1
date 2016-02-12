@@ -22,11 +22,15 @@
 
 
       }
-      video {
+      #video-content {
         display: inline-block;
         width: 50%;
         margin-left: 42.5%;
-        margin-bottom: -3px;
+        @include box-shadow(inset -7px 0px 0px 0px black);
+        video {
+          width: 99.1%;
+          margin-bottom: -3px;
+        }
       }
     }
 }
