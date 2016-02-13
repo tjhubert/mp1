@@ -52,7 +52,7 @@
           float: left;
           overflow: hidden;
           border-right: 4px solid black;
-          background-color: yellow;
+          background-color: $yellow;
           height: 280px;
           width: 38%;
         }
@@ -106,7 +106,7 @@
           display: inline-block;
           width: 25%;
           height: 230px;
-          background-color: blue;
+          background-color: $blue;
         }
       }
       #intro-grid-4 {
@@ -115,7 +115,7 @@
         #grid-4-1 {
           width: 38%;
           height: 150px;
-          background-color: red;
+          background-color: $red;
           border-right: 5px solid black;
 
         }

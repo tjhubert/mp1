@@ -1,6 +1,6 @@
 #multi-column{
     height: 300px;
-    /*background-color: yellow;*/
+    /*background-color: $yellow;*/
     width: 100%;
     border-top: 3px solid black;
     border-bottom: 7px solid black;
@@ -32,7 +32,7 @@
         border-top: 3px solid black;
         width: 100%;
         height: 50px;
-        background-color: red;
+        background-color: $red;
       }
     }
 
@@ -67,12 +67,16 @@
         @include box-shadow(inset -7px 0px 0px 0px black);
         /*border-left: 5px solid black;*/
       }
+      .column-content {
+        position: relative;
+        @include vertical-center(0%);
+      }
       .columns-title{
         margin-left: 40px;
         margin-right: 40px;
-        margin-top: 40px;
+        /*margin-top: 40px;*/
         font-family: $font-primary;
-        font-weight: 400;
+        font-weight: 700;
         font-size: 40px;
         text-align: center;
       }
@@ -87,13 +91,13 @@
       }
     }
     #column-left {
-        background-color: yellow;
+        background-color: $yellow;
       }
       #column-middle {
         background-color: $off-white;
       }
       #column-right {
-        background-color: blue;
+        background-color: $blue;
         color: $off-white;
       }
     

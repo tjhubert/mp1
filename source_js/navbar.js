@@ -34,9 +34,18 @@
     }
 
     function smoothScrollTo(element, indexNavbar) {
+        if (indexNavbar === 0) {
+            offset = 0;
+        }
+        else if (indexNavbar === 1) {
+            offset = 300;
+        }
+        else {
+            offset = 100;
+        }
         $('html, body').animate(
             {
-                scrollTop: element.offset().top - 200
+                scrollTop: element.offset().top - offset
             }, 1200, 'smooth',
             function(){
                 isScrollInProgress = false;

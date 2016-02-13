@@ -49,3 +49,16 @@
 .hide {
   opacity: 0;
 }
+
+.hover-blue {
+  background-color: $blue;
+  color: $off-white;
+}
+.hover-yellow {
+  background-color: $yellow;
+  color: black;
+}
+.hover-red {
+  background-color: $red;
+  color: $off-white;
+}
