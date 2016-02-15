@@ -72,13 +72,16 @@
         @include vertical-center(0%);
       }
       .columns-title{
+        opacity: 1;
         margin-left: 40px;
         margin-right: 40px;
         /*margin-top: 40px;*/
         font-family: $font-primary;
+        /*text-decoration: underline;*/
         font-weight: 700;
         font-size: 40px;
         text-align: center;
+        @include transition(opacity, 0.3s);
       }
       .columns-description{
         margin-right: 40px;
@@ -88,6 +91,7 @@
         font-weight: 100;
         font-size: 16px;
         line-height: 25px;
+        @include transition(opacity, 0.3s);
       }
     }
     #column-left {

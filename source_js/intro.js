@@ -1,70 +1,70 @@
 (function() {    
-    var introElems = $(".initial-hidden");
-    var indexIntro = 0, indexOutro = introElems.length - 2;
-    var hasAnimationStarted = false;
+    var paintingElems = [$(".initial-hidden-a"), $(".initial-hidden-b"), $(".initial-hidden-c"),  $(".initial-hidden-d")]; 
+    console.log(paintingElems.length);
+    var indexIntro = 0, indexOutro;
+    var currentPainting, nextPaintingIndex, prevPaintingIndex = -1;
 
-    function animateIntro() {
-        hasAnimationStarted = true;
-        // $(introElems[indexIntro]).removeClass("intro-grid-hidden");
-        $(introElems[indexIntro]).css("opacity", "1");
-        if (++indexIntro <= introElems.length) {
-            //last element make it more dramatics
-            if (indexIntro === introElems.length) {
-                indexOutro = introElems.length - 2;
-                setTimeout(animateOutro, 2000);
+
+
+    function animateIntro(paintingIndex) {
+
+        function animateElemIntro() {
+        $(currentPainting[indexIntro]).removeClass("animate-intro");
+        $(currentPainting[indexIntro]).addClass("animate-outro");
+            if (++indexIntro <= currentPainting.length) {
+                //last element make it more dramatics
+                if (indexIntro === currentPainting.length) {
+                    indexOutro = currentPainting.length - 1;
+                    setTimeout(animateOutro(paintingIndex), 2500);
+                }
+                else if (indexIntro === currentPainting.length - 1) {
+                    setTimeout(animateIntro(paintingIndex), 500);
+                }
+                else {
+                    setTimeout(animateIntro(paintingIndex), 150); 
+                }
             }
-            else if (indexIntro === introElems.length - 1) {
-                setTimeout(animateIntro, 500);
+        }
+
+        return function() {
+            currentPainting = paintingElems[paintingIndex];
+            if (indexIntro === 0 && prevPaintingIndex !== -1) {
+                Array.prototype.forEach.call(paintingElems[prevPaintingIndex], function(deleteElem) {
+                    $(deleteElem).css("display", "none");
+                });
+                Array.prototype.forEach.call(currentPainting, function(blockElem) {
+                    $(blockElem).css("display", "inline-block");
+                });
+                setTimeout(animateElemIntro, 0);
             }
             else {
-                setTimeout(animateIntro, 150);  // call myself in 3 seconds time if required
+                animateElemIntro();
+            }
+           
+        }
+    };
+
+    function animateOutro(paintingIndex) {
+        return function() {
+            currentPainting = paintingElems[paintingIndex];
+            // $(introElems[indexIntro]).removeClass("intro-grid-hidden");
+            $(currentPainting[indexOutro]).removeClass("animate-outro");
+            $(currentPainting[indexOutro]).addClass("animate-intro");
+            if (--indexOutro >= -1) {
+                if (indexOutro === -1) {
+                    indexIntro = 0;
+                    prevPaintingIndex = paintingIndex;
+                    nextPaintingIndex = paintingIndex < paintingElems.length - 1 ? ++paintingIndex : 0;
+                    
+                    setTimeout(animateIntro(nextPaintingIndex), 800);
+                }
+                else {
+                    setTimeout(animateOutro(paintingIndex), 150);
+                }
             }
         }
     };
 
-    function animateOutro() {
-        hasAnimationStarted = true;
-        // $(introElems[indexIntro]).removeClass("intro-grid-hidden");
-        $(introElems[indexOutro]).css("opacity", "0");
-        if (--indexOutro >= -1) {
-            //last element make it more dramatics
-            if (indexOutro === -1) {
-                indexIntro = 0;
-                setTimeout(animateIntro, 3000);
-            }
-            else {
-                setTimeout(animateOutro, 200);  // call myself in 3 seconds time if required
-            }
-        }
-    };
-
-    function tryStartAnimation() {
-        if (inView($("#intro"), -700) && !hasAnimationStarted) {
-            setTimeout(animateIntro, 500);
-        }
-    }
-
-    // Array.prototype.forEach.call(introElems, function(introEl, index) {
-    //     var introElem = $(introEl);
-    //     introElem.mouseover(function() {
-    //         if (hasAnimationStarted) {
-    //             introElem.addClass("hover-" + randomColorGenerator());
-    //         }
-    //     });
-    //     introElem.mouseleave(function() {
-    //         if (hasAnimationStarted) {
-    //             introElem.removeClass("hover-blue");
-    //             introElem.removeClass("hover-yellow");
-    //             introElem.removeClass("hover-red");
-    //         }
-    //     })
-    // }
-
-    $(window).scroll(function() {
-        tryStartAnimation();
-    });
-
-    setTimeout(animateIntro, 500);
-
+    animateIntro(0)();
 
 })();
