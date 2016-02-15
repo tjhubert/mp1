@@ -1,11 +1,11 @@
 (function() {
-    var backgroundElem = $("#background");
+    var backgroundElem = $("#background-image");
 
     function showHideBackgroundElem() {
       if ($(document).scrollTop() > 1000) {
-        backgroundElem.removeClass("hide");
+        backgroundElem.css("opacity", "1");
       } else {
-        backgroundElem.addClass("hide");
+        backgroundElem.css("opacity", "0");
       }
     }
 
