@@ -3,7 +3,7 @@
     width: 100%;
     margin-left: auto;
     margin-right: auto;
-    border-top: 3px solid black;
+    border-top: 15px solid black;
     background-color: white;
     #footer-margin-left{
       float: left;
@@ -11,7 +11,7 @@
       width: 7.5%;
       height: 100%;
       background-color: $yellow;
-      @include box-shadow(inset -7px 0px 0px 0px black);
+      @include box-shadow(inset -10px 0px 0px 0px black);
     }
     #footer-content {
       background-color: $off-white;

@@ -2,6 +2,7 @@
     var navbarElem = $("#navbar");
     var navbarButtons = $(".navbar-links");
     var isScrollInProgress = false;
+    var isHovered = false, isShrink = false;
 
     $.extend(jQuery.easing,
             {smooth:
@@ -12,15 +13,19 @@
             });
 
     function tryShrinkNavbar() {
-        if ($(document).scrollTop() > 50) {
-            navbarElem.addClass('navbar-shrink');
-        } else {
-            navbarElem.removeClass('navbar-shrink');
+        if (!isHovered) {
+            if ($(document).scrollTop() > 50) {
+                isShrink = true;
+                navbarElem.addClass('navbar-shrink');
+            } else {
+                isShrink = false;
+                navbarElem.removeClass('navbar-shrink');
+            }
         }
     }
 
     function clearActiveNavbars() {
-        Array.prototype.forEach.call(navbarButtons, function(navbarButton) {
+        Array.prototype.forEach.call(navbarButtons, function(navbarButton, index) {
             $(navbarButton).removeClass("navbar-active");
         })
     }
@@ -35,13 +40,13 @@
 
     function smoothScrollTo(element, indexNavbar) {
         if (indexNavbar === 0) {
-            offset = 0;
+            offset = 100;
         }
         else if (indexNavbar === 1) {
-            offset = 300;
+            offset = 200;
         }
         else {
-            offset = 100;
+            offset = 200;
         }
         $('html, body').animate(
             {
@@ -59,12 +64,18 @@
         navbarButtonElem.mouseover(function() {
             if (!navbarButtonElem.hasClass("navbar-active")) {
                 navbarButtonElem.addClass("hover-" + randomColorGenerator());
+                if (index === 0) {
+                    $("#first-navbar").addClass("border-left");
+                }
             }
         });
         navbarButtonElem.mouseleave(function() {
             navbarButtonElem.removeClass("hover-blue");
             navbarButtonElem.removeClass("hover-red");
             navbarButtonElem.removeClass("hover-yellow");
+            if (index === 0) {
+                $("#first-navbar").removeClass("border-left");
+            }
         });
         navbarButtonElem.click(function(){
             if (!navbarButtonElem.hasClass("navbar-active")) {
@@ -98,6 +109,20 @@
             else {
                 clearActiveNavbars();
             }
+        }
+    });
+
+    navbarElem.mouseover(function() {
+        if (isShrink) {
+            navbarElem.removeClass('navbar-shrink');
+            isHovered = true;
+        }
+    });
+
+    navbarElem.mouseleave(function() {
+        if (isHovered) {
+            navbarElem.addClass('navbar-shrink');
+            isHovered = false;
         }
     });
 
