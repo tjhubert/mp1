@@ -1,6 +1,5 @@
 (function() {    
     var paintingElems = [$(".initial-hidden-a"), $(".initial-hidden-b"), $(".initial-hidden-c"),  $(".initial-hidden-d")]; 
-    console.log(paintingElems.length);
     var indexIntro = 0, indexOutro;
     var currentPainting, nextPaintingIndex, prevPaintingIndex = -1;
 
