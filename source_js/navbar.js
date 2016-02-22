@@ -39,6 +39,14 @@
     }
 
     function smoothScrollTo(element, indexNavbar) {
+
+        var page = $("html, body");
+
+        function removePageEvent() {
+            isScrollInProgress = false;
+            page.off("scroll mousedown wheel DOMMouseScroll mousewheel keyup touchmove");
+        }
+
         if (indexNavbar === 0) {
             offset = 100;
         }
@@ -48,12 +56,20 @@
         else {
             offset = 200;
         }
+
+        // allow user to stop smooth scroll when manual scroll is detected
+        page.on("scroll mousedown wheel DOMMouseScroll mousewheel keyup touchmove", function(){
+           page.stop();
+           removePageEvent();
+        });
+
         $('html, body').animate(
             {
                 scrollTop: element.offset().top - offset
             }, 1200, 'smooth',
             function(){
-                isScrollInProgress = false;
+                removePageEvent();
+                // after scrolling is done activate the cicked navbar
                 activateNavbar(indexNavbar);
             }
         );
@@ -96,6 +112,8 @@
 
     $(window).scroll(function() {
         tryShrinkNavbar();
+        // prevent changing active navbar when scroll in progress
+        // for smoother transition
         if (!isScrollInProgress) {
             if (inView($("#multi-column"), 100) || inView($("#video"))) {
                 activateNavbar(0);
@@ -115,15 +133,14 @@
     navbarElem.mouseover(function() {
         if (isShrink) {
             navbarElem.removeClass('navbar-shrink');
-            isHovered = true;
+            isShrink = false;
         }
+        isHovered = true;
     });
 
     navbarElem.mouseleave(function() {
-        if (isHovered) {
-            navbarElem.addClass('navbar-shrink');
-            isHovered = false;
-        }
+        isHovered = false;
+        tryShrinkNavbar();
     });
 
 

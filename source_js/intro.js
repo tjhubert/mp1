@@ -11,11 +11,11 @@
         $(currentPainting[indexIntro]).removeClass("animate-intro");
         $(currentPainting[indexIntro]).addClass("animate-outro");
             if (++indexIntro <= currentPainting.length) {
-                //last element make it more dramatics
                 if (indexIntro === currentPainting.length) {
                     indexOutro = currentPainting.length - 1;
                     setTimeout(animateOutro(paintingIndex), 2500);
                 }
+                //last element make it more dramatics
                 else if (indexIntro === currentPainting.length - 1) {
                     setTimeout(animateIntro(paintingIndex), 500);
                 }
